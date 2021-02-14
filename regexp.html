@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form onsubmit="regEx(); return false">
+Expression 1:<br/>
+<input type="text" /><br/>
+<br/>
+Expression 2:<br/>
+<input type="text" /><br/>
+<input type="submit" />
+<h3 id="result"></h3>
+</form>
+
+<script>
+function regEx(){
+function testExpression(){
+var exp1 = document.getElementsByTagName("input")[0].value;
+var exp2 = document.getElementsByTagName("input")[1].value;
+var exp1Test = exp1.search(/[a-zA-Z]/g);
+var exp2Test = exp2.search(/[a-zA-Z]/g);
+if (exp1Test == -1||exp2Test == -1){
+document.getElementById("result").innerHTML= "False"; 
+} else{
+document.getElementById("result").innerHTML= "True"; 
+}
+}
+testExpression();
+}
+</script>
+</body>
+</html>
